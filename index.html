@@ -15,12 +15,10 @@
             overflow-x: hidden;
         }
 
-        /* Utilidades de color personalizado */
         .text-lima { color: #C6FF00; }
         .bg-lima { background-color: #C6FF00; }
         .border-lima { border-color: #C6FF00; }
         
-        /* Ocultar barra de scroll para el portfolio */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -29,7 +27,16 @@
             scrollbar-width: none;
         }
 
-        /* Animación infinita para las reseñas (Marquee) */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -43,7 +50,6 @@
             animation-play-state: paused;
         }
 
-        /* Efecto de brillo en botones principales */
         .btn-glow {
             box-shadow: 0 0 20px rgba(198, 255, 0, 0.2);
             transition: all 0.3s ease;
@@ -59,23 +65,21 @@
     <!-- NAVBAR -->
     <nav class="fixed top-0 w-full z-50 bg-[#0A1F16]/80 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
                 <img src="https://i.postimg.cc/cJNc3qXG/Logotipo-Vicrea-Studio-2-free-logo-2.png" alt="Vicrea Studio Logo" class="h-10 w-auto group-hover:scale-105 transition-transform">
-                <span class="font-bold text-xl tracking-tight">Vicrea Studio</span>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">Vicrea Studio</span>
             </a>
             
-            <!-- Botón Nav -->
-            <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 border border-lima text-lima hover:bg-lima hover:text-[#0A1F16] font-semibold py-2 px-5 rounded-full transition-colors duration-300">
+            <a href="https://tally.so/r/eql7P0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-lima text-lima hover:bg-lima hover:text-[#0A1F16] font-semibold py-2 px-5 rounded-full transition-colors duration-300 text-sm sm:text-base">
                 Agendar llamada
             </a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <main class="pt-32 pb-20 px-5 md:pt-40 md:pb-28">
-        <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-            <!-- Etiqueta superior -->
+    <main class="pt-32 pb-20 md:pt-40 md:pb-28">
+        
+        <!-- 1. HERO SECTION -->
+        <section class="px-5 max-w-4xl mx-auto text-center flex flex-col items-center scroll-reveal active">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300 mb-8">
                 <span class="w-2 h-2 rounded-full bg-lima animate-pulse"></span>
                 Agencia de Edición Estratégica
@@ -95,594 +99,527 @@
                 Agendar sesión estratégica
             </a>
             
-            <p class="text-sm text-gray-500 mt-4 flex items-center gap-1">
+            <p class="text-sm text-gray-500 mt-4 flex items-center justify-center gap-1">
                 <svg class="w-4 h-4 text-lima" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                 Llamada gratuita de 15 minutos. Sin compromiso.
             </p>
-        </div>
+        </section>
+
+        <!-- 2. CÓMO FUNCIONA -->
+        <section class="py-24 px-5 max-w-6xl mx-auto scroll-reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">¿Cómo funciona nuestro servicio?</h2>
+                <p class="text-gray-400 text-lg">Un proceso claro y sin fricciones para escalar tu contenido.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Paso 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] relative group hover:bg-white/10 transition-colors">
+                    <div class="text-lima font-black text-6xl opacity-20 absolute top-4 right-6 group-hover:scale-110 transition-transform">1</div>
+                    <div class="w-14 h-14 bg-lima/20 rounded-2xl flex items-center justify-center mb-6 text-lima">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Estrategia y Briefing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nos reunimos o completas un formulario para definir tu voz, tus objetivos y los pilares de tu marca.</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] relative group hover:bg-white/10 transition-colors">
+                    <div class="text-lima font-black text-6xl opacity-20 absolute top-4 right-6 group-hover:scale-110 transition-transform">2</div>
+                    <div class="w-14 h-14 bg-lima/20 rounded-2xl flex items-center justify-center mb-6 text-lima">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Edición de Impacto</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Tomo tu material bruto y aplico ganchos psicológicos, edición rítmica y diseño sonoro.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] relative group hover:bg-white/10 transition-colors">
+                    <div class="text-lima font-black text-6xl opacity-20 absolute top-4 right-6 group-hover:scale-110 transition-transform">3</div>
+                    <div class="w-14 h-14 bg-lima/20 rounded-2xl flex items-center justify-center mb-6 text-lima">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Revisión y Ajustes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Te presento la pieza. Trabajamos juntos sobre tus observaciones para que el resultado sea impecable.</p>
+                </div>
+                <!-- Paso 4 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] relative group hover:bg-white/10 transition-colors">
+                    <div class="text-lima font-black text-6xl opacity-20 absolute top-4 right-6 group-hover:scale-110 transition-transform">4</div>
+                    <div class="w-14 h-14 bg-lima/20 rounded-2xl flex items-center justify-center mb-6 text-lima">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dominio Total</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Recibes el video optimizado para que solo tengas que darle a 'publicar' y ver los resultados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PORTFOLIO SECTION -->
+        <section class="py-20 px-5 max-w-7xl mx-auto scroll-reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Nuestro Trabajo</h2>
+            
+            <div class="flex md:grid md:grid-cols-5 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar">
+                
+                <div class="relative w-72 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl group">
+                    <video src="https://res.cloudinary.com/no8sarum/video/upload/v1783882742/Video_Websites_Final_m9o7jc.mp4" class="absolute inset-0 w-full h-full object-cover portfolio-video" controls playsinline preload="metadata"></video>
+                    <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10 transition-opacity duration-300">
+                        <div class="flex items-center gap-2 mb-1.5"><span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">1.2M Views</span></div>
+                        <p class="text-xs font-medium text-white line-clamp-2">Edición inmersiva y ganchos visuales.</p>
+                    </div>
+                </div>
+
+                <div class="relative w-72 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl group">
+                    <video src="https://res.cloudinary.com/no8sarum/video/upload/v1783882665/Ainhoa_UGC_ibpa9y.mp4" class="absolute inset-0 w-full h-full object-cover portfolio-video" controls playsinline preload="metadata"></video>
+                    <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10 transition-opacity duration-300">
+                        <div class="flex items-center gap-2 mb-1.5"><span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">800K Views</span></div>
+                        <p class="text-xs font-medium text-white line-clamp-2">Contenido UGC auténtico y directo.</p>
+                    </div>
+                </div>
+
+                <div class="relative w-72 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl group">
+                    <video src="https://res.cloudinary.com/no8sarum/video/upload/v1783882549/Personal_Brand_CEO-Nea_Final_tfaeda.mp4" class="absolute inset-0 w-full h-full object-cover portfolio-video" controls playsinline preload="metadata"></video>
+                    <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10 transition-opacity duration-300">
+                        <div class="flex items-center gap-2 mb-1.5"><span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">500K Views</span></div>
+                        <p class="text-xs font-medium text-white line-clamp-2">Marca personal para CEOs y fundadores.</p>
+                    </div>
+                </div>
+
+                <div class="relative w-72 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl group">
+                    <video src="https://res.cloudinary.com/no8sarum/video/upload/v1783882432/Video_15_vrppgz.mp4" class="absolute inset-0 w-full h-full object-cover portfolio-video" controls playsinline preload="metadata"></video>
+                    <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10 transition-opacity duration-300">
+                        <div class="flex items-center gap-2 mb-1.5"><span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">2.1M Views</span></div>
+                        <p class="text-xs font-medium text-white line-clamp-2">Edición dinámica de alto impacto.</p>
+                    </div>
+                </div>
+                
+                <div class="relative w-72 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl group">
+                    <video src="https://res.cloudinary.com/no8sarum/video/upload/v1783882600/Elevator_Pitch_2_Final_xakpwf.mp4" class="absolute inset-0 w-full h-full object-cover portfolio-video" controls playsinline preload="metadata"></video>
+                    <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10 transition-opacity duration-300">
+                        <div class="flex items-center gap-2 mb-1.5"><span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">1.5M Views</span></div>
+                        <p class="text-xs font-medium text-white line-clamp-2">Estructura para Elevator Pitch persuasivo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN REVIEWS -->
+        <section class="py-16 bg-white/5 border-y border-white/10 overflow-hidden relative scroll-reveal">
+            <div class="max-w-7xl mx-auto px-5 mb-10 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Lo que dicen <span class="text-lima">nuestros clientes</span></h2>
+            </div>
+
+            <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0A1F16] to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0A1F16] to-transparent z-10"></div>
+
+            <div class="animate-marquee gap-6 px-6 items-stretch">
+                <!-- GRUPO 1 -->
+                <div class="flex gap-6 items-stretch">
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Excelente persona, captó súper bien mi idea realizando mi proyecto con un resultado increíble, realizó los cambios y todo lo que pedí sin ningún problema, volvería a trabajar con él encantada. Recomendado 100%."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold text-xs">MJ</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Maira Jaramillo</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Ha sido un auténtico regalo trabajar con Yair, amable, rápido en las respuestas, cuidadoso con todos los detalles que quería. Sin duda un gran profesional y una gran persona. El tiempo era super ajustado y lo ha dado todo."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xs">MM</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Maii Medi</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Yair es un gran profesional. Destaca en cuanto a competencias, forma de trabajar, puntualidad en las entregas y facilidad de comunicación."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs">IN</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Irene Narvaez</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Serio, atento a las modificaciones requeridas, eficiente.... trabajaría con él de nuevo."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs">V</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">VICMUN</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Persona eficiente, trabajo de calidad, fácil comunicación y trato agradable. Lo recomiendo 100%. Repetiría."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-xs">M</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Marcel</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Muy profesional y dedicado."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xs">SF</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Saul Fresneda</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GRUPO 2 (Duplicado para loop) -->
+                <div class="flex gap-6 items-stretch" aria-hidden="true">
+                    <!-- Mismo contenido repetido para el efecto infinito -->
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Excelente persona, captó súper bien mi idea realizando mi proyecto con un resultado increíble, realizó los cambios y todo lo que pedí sin ningún problema, volvería a trabajar con él encantada. Recomendado 100%."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold text-xs">MJ</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Maira Jaramillo</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Ha sido un auténtico regalo trabajar con Yair, amable, rápido en las respuestas, cuidadoso con todos los detalles que quería. Sin duda un gran profesional y una gran persona. El tiempo era super ajustado y lo ha dado todo."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xs">MM</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Maii Medi</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Yair es un gran profesional. Destaca en cuanto a competencias, forma de trabajar, puntualidad en las entregas y facilidad de comunicación."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs">IN</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Irene Narvaez</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Persona eficiente, trabajo de calidad, fácil comunicación y trato agradable. Lo recomiendo 100%. Repetiría."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs">V</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">VICMUN</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-[#0A1F16] text-sm font-medium">"Muy profesional y dedicado."</p>
+                        <div class="flex items-center gap-3 mt-auto pt-4">
+                            <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xs">SF</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-[#0A1F16] font-bold">Saul Fresneda</span>
+                                <span class="text-[10px] text-gray-500">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SOBRE MÍ / TRANSICIÓN -->
+        <section class="py-20 px-5 bg-white/5 border-y border-white/10 relative overflow-hidden scroll-reveal">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-lima/5 blur-[120px] rounded-full pointer-events-none"></div>
+            
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
+                <div class="relative w-56 h-56 md:w-72 md:h-72 shrink-0">
+                    <div class="absolute inset-0 bg-lima rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                    <img src="https://i.postimg.cc/Gp3M4wXK/IMG-1445.jpg" alt="Yair - Vicrea Studio" class="relative z-10 w-full h-full object-cover rounded-full border-4 border-[#123626] shadow-2xl">
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Soy tu <span class="text-lima">socio creativo</span>.</h2>
+                    <p class="text-gray-300 text-lg mb-5 leading-relaxed font-medium">
+                        Hola, soy Yair. Hace 3 años comencé mi camino en el mundo audiovisual destacando como freelance. Allí descubrí un problema enorme: <span class="text-white font-bold">creadores frustrados pasando horas editando videos que el algoritmo ignoraba.</span>
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed font-medium">
+                        Por eso creé Vicrea Studio. Mi enfoque no es solo hacer cortes rápidos y poner subtítulos bonitos. Aplico ganchos psicológicos y estructuras de retención para que tus videos se conviertan en un <strong class="text-white font-bold">imán de ventas</strong>, mientras tú recuperas tu tiempo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PLANES DE INVERSIÓN -->
+        <section id="planes" class="py-24 px-5 relative scroll-reveal">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Planes de Inversión</h2>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+                        Elige el ritmo de publicación que tu marca necesita. <br class="hidden sm:block">Sin contratos a largo plazo.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center relative z-10">
+                    
+                    <div class="bg-[#0A1F16] border border-white/10 rounded-[2rem] p-8 hover:border-white/30 transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-2">Plan Presencia</h3>
+                        <p class="text-gray-400 text-sm mb-6 h-10">Para mantener tu marca activa en el radar de tu audiencia.</p>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-extrabold text-white">4</span>
+                            <span class="text-gray-400 font-medium">Reels / mes</span>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm font-medium text-gray-300">
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Edición estratégica</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Subtítulos dinámicos</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Corrección de color</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>1 ronda de revisión</li>
+                        </ul>
+                        
+                        <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-white/20 text-white font-bold py-4 rounded-xl hover:bg-white hover:text-[#0A1F16] transition-colors">
+                            Agendar llamada
+                        </a>
+                    </div>
+
+                    <div class="bg-[#123626] border-2 border-lima rounded-[2.5rem] p-8 lg:scale-105 shadow-[0_0_40px_rgba(198,255,0,0.15)] relative z-20">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-lima text-[#0A1F16] text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">
+                            Más Popular
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Plan Crecimiento</h3>
+                        <p class="text-lima/80 text-sm mb-6 h-10">Para creadores listos para crecer y captar audiencia agresivamente.</p>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-5xl font-extrabold text-white">8</span>
+                            <span class="text-gray-300 font-medium">Reels / mes</span>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm font-medium text-white">
+                            <li class="flex items-start gap-3 text-gray-300"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todo lo del Plan Presencia</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Búsqueda de audios en tendencia</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Asesoría de ganchos (hooks)</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>2 rondas de revisión</li>
+                        </ul>
+                        
+                        <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full text-center bg-lima text-[#0A1F16] font-bold text-lg py-4 rounded-xl">
+                            Agendar llamada
+                        </a>
+                    </div>
+
+                    <div class="bg-[#0A1F16] border border-white/10 rounded-[2rem] p-8 hover:border-white/30 transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-2">Plan Autoridad</h3>
+                        <p class="text-gray-400 text-sm mb-6 h-10">Para negocios que buscan dominar su nicho de mercado.</p>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-extrabold text-white">12+</span>
+                            <span class="text-gray-400 font-medium">Reels / mes</span>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm font-medium text-gray-300">
+                            <li class="flex items-start gap-3 text-gray-400"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todo lo del Plan Crecimiento</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Edición prioritaria (48h)</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Estrategia 1:1 mensual (Zoom)</li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Análisis de métricas</li>
+                        </ul>
+                        
+                        <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-white/20 text-white font-bold py-4 rounded-xl hover:bg-white hover:text-[#0A1F16] transition-colors">
+                            Agendar llamada
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PARA QUIÉN NO ES (FILTRO) -->
+        <section class="py-20 px-5 bg-gradient-to-b from-transparent to-red-900/10 border-b border-red-500/10 scroll-reveal">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">¿Para quién <span class="text-red-500">NO</span> es este servicio?</h2>
+                    <p class="text-gray-400 text-lg">Nos tomamos tu crecimiento en serio, por eso somos selectivos con quién trabajamos.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-[#0A1F16] border border-white/10 p-6 rounded-2xl flex flex-col gap-3">
+                        <div class="w-10 h-10 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg">Si buscas lo más barato</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Mi enfoque es la calidad y el retorno de inversión (ROI) para tu marca, no el volumen de edición barata.</p>
+                    </div>
+                    <div class="bg-[#0A1F16] border border-white/10 p-6 rounded-2xl flex flex-col gap-3">
+                        <div class="w-10 h-10 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg">Si no grabas con intención</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Vicrea Studio optimiza tu contenido y lo hace brillar, pero no hace milagros con material pixelado o sin un mensaje base.</p>
+                    </div>
+                    <div class="bg-[#0A1F16] border border-white/10 p-6 rounded-2xl flex flex-col gap-3">
+                        <div class="w-10 h-10 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg">Si buscas magia rápida</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Construir una audiencia real y autoridad requiere constancia. No trabajamos con soluciones de "un solo video" para hacerse viral.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PREGUNTAS FRECUENTES -->
+        <section class="py-24 px-5 scroll-reveal">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">Preguntas Frecuentes</h2>
+                
+                <div class="space-y-4">
+                    <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
+                            ¿Cómo te envío mi material grabado?
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-lima"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </summary>
+                        <div class="text-gray-400 mt-4 leading-relaxed font-medium">
+                            Una vez elijamos el plan, podrás subir tus clips en bruto de forma organizada en una carpeta compartida a través de Google Drive o Dropbox.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
+                            ¿Cuál es el tiempo de entrega?
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-lima"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </summary>
+                        <div class="text-gray-400 mt-4 leading-relaxed font-medium">
+                            El tiempo estándar es de 48 a 72 horas hábiles por video tras la recepción del material, asegurando una frecuencia de publicación constante para tu marca.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
+                            ¿Qué pasa si quiero hacer un cambio en la edición?
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-lima"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </summary>
+                        <div class="text-gray-400 mt-4 leading-relaxed font-medium">
+                            Todos los planes incluyen rondas de revisión. Mi objetivo es que el video final supere tus expectativas y conecte realmente con tu audiencia.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
+                            ¿Puedo cambiar de plan en cualquier momento?
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-lima"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </summary>
+                        <div class="text-gray-400 mt-4 leading-relaxed font-medium">
+                            Totalmente. Puedes escalar tu plan a medida que tu visibilidad y necesidades de contenido aumenten.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER HERRAMIENTAS -->
+        <section class="py-12 border-t border-white/10 scroll-reveal">
+            <div class="max-w-4xl mx-auto px-5">
+                <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">Flujo de trabajo profesional impulsado por</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+                    <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
+                        <div class="w-8 h-8 rounded border-2 border-current flex items-center justify-center font-bold text-xs bg-[#00005b] text-[#9999ff] border-none">Pr</div>
+                        <span class="font-bold tracking-tight">Premiere Pro</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
+                        <div class="w-8 h-8 rounded border-2 border-current flex items-center justify-center font-bold text-xs bg-[#00005b] text-[#d999ff] border-none">Ae</div>
+                        <span class="font-bold tracking-tight">After Effects</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                        <span class="font-bold tracking-tight">CapCut Pro</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span class="font-bold tracking-tight">IA Tools</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- SECCIÓN REVIEWS -->
-    <section class="py-12 bg-white/5 border-y border-white/10 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-5 mb-8 text-center">
-            <h2 class="text-xl md:text-2xl font-bold text-white">Lo que dicen <span class="text-lima">nuestros clientes</span></h2>
-        </div>
-
-        <!-- Gradientes para disimular los bordes del carrusel -->
-        <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0A1F16] to-transparent z-10"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0A1F16] to-transparent z-10"></div>
-
-        <!-- Contenedor Marquee -->
-        <div class="animate-marquee gap-6 px-6 items-stretch">
-            <!-- GRUPO 1 -->
-            <div class="flex gap-6 items-stretch">
-                <!-- Tarjeta 1 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Excelente persona, captó súper bien mi idea realizando mi proyecto con un resultado increíble. Realizó los cambios y todo lo que pedí sin ningún problema, volvería a trabajar con él encantada. Recomendado 100%."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold text-xs">MJ</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Maira Jaramillo</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta 2 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Ha sido un auténtico regalo trabajar con Yair, amable, rápido en las respuestas, cuidadoso con todos los detalles que quería. Sin duda un gran profesional y una gran persona. El tiempo era super ajustado y lo ha dado todo."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xs">MM</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Maii Medi</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta 3 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Yair es un gran profesional. Destaca en cuanto a competencias, forma de trabajar, puntualidad en las entregas y facilidad de comunicación."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs">IN</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Irene Narvaez</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta 4 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Persona eficiente, trabajo de calidad, fácil comunicación y trato agradable. Lo recomiendo 100%. Repetiría."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-xs">M</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Marcel</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta 5 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Serio, atento a las modificaciones requeridas, eficiente.... trabajaría con él de nuevo."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs">V</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">VICMUN</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta 6 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Muy profesional y dedicado."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xs">SF</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Saul Fresneda</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GRUPO 2 (Duplicado exacto para el efecto infinito continuo sin cortes) -->
-            <div class="flex gap-6 items-stretch">
-                <!-- Se repiten las 6 tarjetas del Grupo 1 -->
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Excelente persona, captó súper bien mi idea realizando mi proyecto con un resultado increíble. Realizó los cambios y todo lo que pedí sin ningún problema, volvería a trabajar con él encantada. Recomendado 100%."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold text-xs">MJ</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Maira Jaramillo</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Ha sido un auténtico regalo trabajar con Yair, amable, rápido en las respuestas, cuidadoso con todos los detalles que quería. Sin duda un gran profesional y una gran persona. El tiempo era super ajustado y lo ha dado todo."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xs">MM</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Maii Medi</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Yair es un gran profesional. Destaca en cuanto a competencias, forma de trabajar, puntualidad en las entregas y facilidad de comunicación."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs">IN</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Irene Narvaez</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Serio, atento a las modificaciones requeridas, eficiente.... trabajaría con él de nuevo."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs">V</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">VICMUN</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Persona eficiente, trabajo de calidad, fácil comunicación y trato agradable. Lo recomiendo 100%. Repetiría."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-xs">M</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Marcel</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-80 bg-white rounded-2xl p-6 flex flex-col gap-3 shrink-0">
-                    <div class="flex gap-1 text-yellow-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-[#0A1F16] text-sm font-medium">"Muy profesional y dedicado."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xs">SF</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs text-[#0A1F16] font-bold">Saul Fresneda</span>
-                            <span class="text-[10px] text-gray-500">Cliente Verificado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO SECTION -->
-    <section class="py-20 px-5 max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Nuestro Trabajo</h2>
-        
-        <!-- Contenedor scroll horizontal para móviles, grid para desktop -->
-        <div class="flex md:grid md:grid-cols-5 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar">
-            
-            <!-- Video 1 -->
-            <div class="relative w-64 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl">
-                <video 
-                    src="https://res.cloudinary.com/no8sarum/video/upload/v1783882742/Video_Websites_Final_m9o7jc.mp4" 
-                    class="absolute inset-0 w-full h-full object-cover portfolio-video" 
-                    controls 
-                    playsinline
-                    preload="metadata">
-                </video>
-                <!-- Textos movidos arriba para no interferir con los controles -->
-                <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">1.2M Views</span>
-                    </div>
-                    <p class="text-xs font-medium text-white line-clamp-2">Edición inmersiva y ganchos visuales.</p>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="relative w-64 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl">
-                <video 
-                    src="https://res.cloudinary.com/no8sarum/video/upload/v1783882665/Ainhoa_UGC_ibpa9y.mp4" 
-                    class="absolute inset-0 w-full h-full object-cover portfolio-video" 
-                    controls 
-                    playsinline
-                    preload="metadata">
-                </video>
-                <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">800K Views</span>
-                    </div>
-                    <p class="text-xs font-medium text-white line-clamp-2">Contenido UGC auténtico y directo.</p>
-                </div>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="relative w-64 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl">
-                <video 
-                    src="https://res.cloudinary.com/no8sarum/video/upload/v1783882549/Personal_Brand_CEO-Nea_Final_tfaeda.mp4" 
-                    class="absolute inset-0 w-full h-full object-cover portfolio-video" 
-                    controls 
-                    playsinline
-                    preload="metadata">
-                </video>
-                <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">500K Views</span>
-                    </div>
-                    <p class="text-xs font-medium text-white line-clamp-2">Marca personal para CEOs y fundadores.</p>
-                </div>
-            </div>
-
-            <!-- Video 4 -->
-            <div class="relative w-64 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl">
-                <video 
-                    src="https://res.cloudinary.com/no8sarum/video/upload/v1783882432/Video_15_vrppgz.mp4" 
-                    class="absolute inset-0 w-full h-full object-cover portfolio-video" 
-                    controls 
-                    playsinline
-                    preload="metadata">
-                </video>
-                <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">2.1M Views</span>
-                    </div>
-                    <p class="text-xs font-medium text-white line-clamp-2">Edición dinámica de alto impacto.</p>
-                </div>
-            </div>
-            
-            <!-- Video 5 -->
-            <div class="relative w-64 md:w-full aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden snap-center shrink-0 border border-white/10 shadow-2xl">
-                <video 
-                    src="https://res.cloudinary.com/no8sarum/video/upload/v1783882600/Elevator_Pitch_2_Final_xakpwf.mp4" 
-                    class="absolute inset-0 w-full h-full object-cover portfolio-video" 
-                    controls 
-                    playsinline
-                    preload="metadata">
-                </video>
-                <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-[#0A1F16]/90 to-transparent pointer-events-none z-10">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="bg-lima text-[#0A1F16] text-[10px] font-bold px-2 py-0.5 rounded">1.5M Views</span>
-                    </div>
-                    <p class="text-xs font-medium text-white line-clamp-2">Estructura para Elevator Pitch persuasivo.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SOBRE MÍ / FUNDADOR -->
-    <section class="py-20 px-5 bg-white/5 border-y border-white/10 relative overflow-hidden">
-        <!-- Glow de fondo -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-lima/5 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
-            <!-- Imagen -->
-            <div class="relative w-56 h-56 md:w-72 md:h-72 shrink-0">
-                <!-- Aura verde lima -->
-                <div class="absolute inset-0 bg-lima rounded-full blur-2xl opacity-20 animate-pulse"></div>
-                <!-- Foto real -->
-                <img src="https://i.postimg.cc/Gp3M4wXK/IMG-1445.jpg" alt="Yair - Vicrea Studio" class="relative z-10 w-full h-full object-cover rounded-full border-4 border-[#123626] shadow-2xl">
-            </div>
-            
-            <!-- Texto -->
-            <div class="text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Soy tu <span class="text-lima">socio creativo</span>.</h2>
-                <p class="text-gray-300 text-lg mb-5 leading-relaxed font-medium">
-                    Hola, soy Yair. Hace 3 años comencé mi camino en el mundo audiovisual destacando como freelance en Workana. Allí descubrí un problema enorme: <span class="text-white font-bold">creadores talentosos frustrados pasando horas editando videos que el algoritmo ignoraba.</span>
-                </p>
-                <p class="text-gray-400 text-lg mb-8 leading-relaxed font-medium">
-                    Por eso creé Vicrea Studio. Mi enfoque no es solo hacer cortes rápidos y poner subtítulos bonitos. Aplico ganchos psicológicos y estructuras de retención para que tus videos se conviertan en un <strong class="text-white font-bold">imán de ventas</strong>, mientras tú recuperas tu tiempo.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center gap-5 justify-center md:justify-start bg-[#0A1F16] p-4 rounded-2xl border border-white/10 w-fit mx-auto md:mx-0">
-                    <div class="flex items-center gap-2">
-                        <div class="bg-lima/20 p-1.5 rounded-full"><svg class="w-4 h-4 text-lima" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></div>
-                        <span class="text-sm font-bold text-white">Estrategia probada</span>
-                    </div>
-                    <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-600"></div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-lima/20 p-1.5 rounded-full"><svg class="w-4 h-4 text-lima" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></div>
-                        <span class="text-sm font-bold text-white">Cero estrés técnico</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PLANES DE INVERSIÓN (MODELO SUSCRIPCIÓN) -->
-    <section id="planes" class="py-24 px-5 bg-gradient-to-b from-transparent to-white/5 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 relative z-10">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Planes de Inversión</h2>
-                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-                    Elige el ritmo de publicación que tu marca necesita. <br class="hidden sm:block">Sin contratos a largo plazo, escalabilidad total.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center relative z-10">
-                
-                <!-- Plan 1: Presencia -->
-                <div class="bg-[#0A1F16] border border-white/10 rounded-[2rem] p-8 hover:border-white/30 transition-colors">
-                    <h3 class="text-xl font-bold text-white mb-2">Plan Presencia</h3>
-                    <p class="text-gray-400 text-sm mb-6 h-10">Para mantener tu marca activa en el radar de tu audiencia.</p>
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-extrabold text-white">4</span>
-                        <span class="text-gray-400 font-medium">Reels / mes</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-8 text-sm font-medium text-gray-300">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Edición estratégica
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Subtítulos dinámicos
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Corrección de color
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            1 ronda de revisión
-                        </li>
-                    </ul>
-                    
-                    <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-white/20 text-white font-bold py-4 rounded-xl hover:bg-white hover:text-[#0A1F16] transition-colors">
-                        Agendar llamada
-                    </a>
-                </div>
-
-                <!-- Plan 2: Crecimiento (Destacado) -->
-                <div class="bg-[#123626] border-2 border-lima rounded-[2.5rem] p-8 lg:scale-105 shadow-[0_0_40px_rgba(198,255,0,0.15)] relative z-20">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-lima text-[#0A1F16] text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">
-                        Más Popular
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Plan Crecimiento</h3>
-                    <p class="text-lima/80 text-sm mb-6 h-10">Para creadores listos para crecer y captar audiencia agresivamente.</p>
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-5xl font-extrabold text-white">8</span>
-                        <span class="text-gray-300 font-medium">Reels / mes</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-8 text-sm font-medium text-white">
-                        <li class="flex items-start gap-3 text-gray-300">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Todo lo del Plan Presencia
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Búsqueda de audios en tendencia
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Asesoría de ganchos (hooks)
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            2 rondas de revisión
-                        </li>
-                    </ul>
-                    
-                    <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full text-center bg-lima text-[#0A1F16] font-bold text-lg py-4 rounded-xl">
-                        Agendar llamada
-                    </a>
-                </div>
-
-                <!-- Plan 3: Autoridad -->
-                <div class="bg-[#0A1F16] border border-white/10 rounded-[2rem] p-8 hover:border-white/30 transition-colors">
-                    <h3 class="text-xl font-bold text-white mb-2">Plan Autoridad</h3>
-                    <p class="text-gray-400 text-sm mb-6 h-10">Para negocios que buscan dominar su nicho de mercado.</p>
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-extrabold text-white">12+</span>
-                        <span class="text-gray-400 font-medium">Reels / mes</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-8 text-sm font-medium text-gray-300">
-                        <li class="flex items-start gap-3 text-gray-400">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Todo lo del Plan Crecimiento
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Edición prioritaria (48h)
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Estrategia 1:1 mensual (Zoom)
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-lima shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Análisis de métricas
-                        </li>
-                    </ul>
-                    
-                    <a href="https://shop.beacons.ai/vicreastudio/3479ced0-55dd-4874-9f46-5b6e74eceb8f" target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-white/20 text-white font-bold py-4 rounded-xl hover:bg-white hover:text-[#0A1F16] transition-colors">
-                        Agendar llamada
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES -->
-    <section class="py-24 px-5">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">Preguntas Frecuentes</h2>
-            
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
-                        ¿Cómo te envío mi material grabado?
-                        <span class="transition-transform duration-300 group-open:rotate-180 text-lima">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </summary>
-                    <div class="text-gray-400 mt-4 leading-relaxed font-medium">
-                        Una vez elijamos el plan, podrás subir tus clips en bruto de forma organizada en una carpeta compartida a través de Google Drive o Dropbox.
-                    </div>
-                </details>
-
-                <!-- FAQ 2 -->
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
-                        ¿Cuál es el tiempo de entrega?
-                        <span class="transition-transform duration-300 group-open:rotate-180 text-lima">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </summary>
-                    <div class="text-gray-400 mt-4 leading-relaxed font-medium">
-                        El tiempo estándar es de 48 a 72 horas hábiles por video tras la recepción del material, asegurando una frecuencia de publicación constante para tu marca.
-                    </div>
-                </details>
-
-                <!-- FAQ 3 -->
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
-                        ¿Qué pasa si quiero hacer un cambio en la edición?
-                        <span class="transition-transform duration-300 group-open:rotate-180 text-lima">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </summary>
-                    <div class="text-gray-400 mt-4 leading-relaxed font-medium">
-                        Todos los planes incluyen rondas de revisión. Mi objetivo es que el video final supere tus expectativas y conecte realmente con tu audiencia.
-                    </div>
-                </details>
-
-                <!-- FAQ 4 -->
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 open:bg-white/10 transition-colors duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-lg text-white">
-                        ¿Puedo cambiar de plan en cualquier momento?
-                        <span class="transition-transform duration-300 group-open:rotate-180 text-lima">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </summary>
-                    <div class="text-gray-400 mt-4 leading-relaxed font-medium">
-                        Totalmente. Puedes escalar tu plan a medida que tu visibilidad y necesidades de contenido aumenten.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- BANNER HERRAMIENTAS -->
-    <section class="py-12 border-t border-white/10">
-        <div class="max-w-4xl mx-auto px-5">
-            <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">Flujo de trabajo profesional impulsado por</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-                
-                <!-- Adobe Premiere Pro -->
-                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                    <div class="w-8 h-8 rounded border-2 border-current flex items-center justify-center font-bold text-xs bg-[#00005b] text-[#9999ff] border-none">Pr</div>
-                    <span class="font-bold tracking-tight">Premiere Pro</span>
-                </div>
-                
-                <!-- After Effects -->
-                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                    <div class="w-8 h-8 rounded border-2 border-current flex items-center justify-center font-bold text-xs bg-[#00005b] text-[#d999ff] border-none">Ae</div>
-                    <span class="font-bold tracking-tight">After Effects</span>
-                </div>
-
-                <!-- CapCut -->
-                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                    <span class="font-bold tracking-tight">CapCut Pro</span>
-                </div>
-
-                <!-- AI Tools -->
-                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <span class="font-bold tracking-tight">IA Tools</span>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- 9. FOOTER -->
     <footer class="border-t border-white/10 py-10 mt-10">
         <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2 opacity-80">
@@ -703,20 +640,40 @@
         </div>
     </footer>
 
-    <!-- SCRIPT PARA CONTROL INTELIGENTE DE VIDEOS -->
+    <!-- SCRIPT DE ANIMACIONES Y VIDEOS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 1. Lógica de Videos Inteligentes (Pausar el anterior)
             const videos = document.querySelectorAll('.portfolio-video');
-            
             videos.forEach(video => {
                 video.addEventListener('play', function() {
-                    // Pausar todos los demás videos cuando el usuario le da play a uno
                     videos.forEach(v => {
                         if (v !== video && !v.paused) {
                             v.pause();
                         }
                     });
                 });
+            });
+
+            // 2. Animación al hacer Scroll (Intersection Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Opcional: Descomentar la siguiente línea si quieres que la animación solo ocurra una vez
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach((el) => {
+                observer.observe(el);
             });
         });
     </script>
